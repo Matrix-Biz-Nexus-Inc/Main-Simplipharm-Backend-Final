@@ -1,2 +1,2 @@
 # sila fresh git
- SimpliPharm Frsh git repository
+ SimpliPharm Fresh git repository
