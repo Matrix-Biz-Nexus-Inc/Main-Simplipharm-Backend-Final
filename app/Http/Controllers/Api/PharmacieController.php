@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\PharmacyStoreRequest;
-use App\Http\Resources\PharmacyResource;
-use App\Http\Resources\PharmacySingleResource;
-use App\Models\Pharmacy;
+use App\Http\Requests\PharmacieStoreRequest;
+use App\Http\Resources\PharmacieResource;
+use App\Http\Resources\PharmacieSingleResource;
+use App\Models\Pharmacie;
 use Illuminate\Http\Request;
 
-class PharmacyController extends Controller
+class PharmacieController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,17 +18,17 @@ class PharmacyController extends Controller
      */
     public function index(Request $request)
     {
-        $pharmacies = Pharmacy::all();
+        $pharmacies = Pharmacie::all();
 
         if ($request->search) {
-            $pharmacies = Pharmacy::where('registered_name', "like", "%{$request->search}%")
+            $pharmacies = Pharmacie::where('registered_name', "like", "%{$request->search}%")
             ->orWhere('company_name', "like", "%{$request->search}%")
             ->get();
         } elseif ($request->department_id) {
-            $pharmacies = Pharmacy::where('department_id', $request->department_id)->get();
+            $pharmacies = Pharmacie::where('department_id', $request->department_id)->get();
         } 
 
-        return PharmacyResource::collection($pharmacies);
+        return PharmacieResource::collection($pharmacies);
     }
 
     /**
@@ -47,11 +47,11 @@ class PharmacyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PharmacyStoreRequest $request)
+    public function store(PharmacieStoreRequest $request)
     {
-        $pharmacy = Pharmacy::create($request->validated());
+        $pharmacie = Pharmacie::create($request->validated());
 
-        return response()->json($pharmacy);
+        return response()->json($pharmacie);
     }
 
     /**
@@ -60,9 +60,9 @@ class PharmacyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Pharmacy $pharmacy)
+    public function show(Pharmacie $pharmacie)
     {
-        return new PharmacySingleResource($pharmacy);
+        return new PharmacieSingleResource($pharmacie);
     }
 
     /**
@@ -83,9 +83,9 @@ class PharmacyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(PharmacyStoreRequest $request, Pharmacy $pharmacy)
+    public function update(PharmacieStoreRequest $request, Pharmacie $pharmacie)
     {
-        $pharmacy->update($request->validated());
+        $pharmacie->update($request->validated());
     }
 
     /**
@@ -94,9 +94,9 @@ class PharmacyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pharmacy $pharmacy)
+    public function destroy(Pharmacie $pharmacie)
     {
-        $pharmacy->delete();
+        $pharmacie->delete();
 
         return response()->json('Record deleted Successfully');
     }

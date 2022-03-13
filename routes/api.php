@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\EmployeeController;
 use App\Http\Controllers\Api\EmployeeDataController;
 use App\Http\Controllers\Api\PharmacistController;
 use App\Http\Controllers\Api\PharmacistDataController;
+use App\Http\Controllers\Api\PharmacieController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -39,4 +40,4 @@ Route::delete('/pharmacies/{pharmacist}', [PharmacistController::class, 'destroy
 
 //Route::resource('pharmacies', PharmaciesController::class);
 Route::apiResource('employees', EmployeeController::class);
-Route::apiResource('pharmacies', PharmaciesController::class);
+Route::apiResource('pharmacies', PharmacieController::class);

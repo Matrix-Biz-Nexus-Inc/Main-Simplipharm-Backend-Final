@@ -27,6 +27,10 @@ class CreatePharmacies extends Migration
             $table->string('contact_person');
             $table->string('contact_person_number');
             $table->string('area');
+            $table->foreignId('department_id')->constrained();
+            $table->foreignId('country_id')->constrained();
+            $table->foreignId('state_id')->constrained();
+            $table->foreignId('city_id')->constrained();
             $table->timestamps();
         });
     }

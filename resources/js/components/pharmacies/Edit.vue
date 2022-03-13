@@ -7,14 +7,14 @@
                         <div class="card-header">
                             Update Pharmacist Record
                             <router-link
-                                :to="{ name: 'PharmacistsIndex' }"
+                                :to="{ name: 'PharmaciesIndex' }"
                                 class="float-right"
                                 >Back</router-link
                             >
                         </div>
 
                         <div class="card-body">
-                            <form @submit.prevent="updatePharmacist">
+                            <form @submit.prevent="updatePharmacie">
                                 <div class="form-group row">
                                     <label
                                         for="first_name"

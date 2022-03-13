@@ -22,6 +22,10 @@ class CreatePrescriptions extends Migration
             $table->string('clientId')->nullable();
             $table->string('location')->nullable();
             $table->string('rx_number')->nullable();
+            $table->foreignId('department_id')->constrained();
+            $table->foreignId('country_id')->constrained();
+            $table->foreignId('state_id')->constrained();
+            $table->foreignId('city_id')->constrained();
             $table->timestamps();
         });
     }

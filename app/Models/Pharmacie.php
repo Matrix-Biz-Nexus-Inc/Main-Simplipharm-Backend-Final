@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Pharmacy extends Model
+class Pharmacie extends Model
 {
     use HasFactory;
 
@@ -21,6 +21,10 @@ class Pharmacy extends Model
             'blockchain_ver',
             'contact_person',
             'contact_person_number',
-            'area'
+            'area',
+            'country',
+            'state',
+            'city',
+            'country_id',
     ];
 }

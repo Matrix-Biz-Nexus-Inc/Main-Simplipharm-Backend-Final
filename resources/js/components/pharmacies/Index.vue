@@ -33,7 +33,7 @@
                                             </div>
     
                                             <div class="col">
-                                                <router-link :to="{ name: 'PharmaciesCreate' }" class="btn btn-primary mb-2">Add New Pharmacy</router-link>
+                                                <router-link :to="{ name: 'PharmaciesCreate' }" class="btn btn-primary mb-2">Create New</router-link>
                                             </div>
                                         </div>
                                     </form>
@@ -65,20 +65,20 @@
                                     </tfoot>
                                     <tbody>
                                         <tr class="even"
-                                            v-for="pharmacy  in pharmacies"
-                                            :key="pharmacy.id"
+                                            v-for="pharmacie  in pharmacies"
+                                            :key="pharmacie.id"
                                         >
-                                            <td class="sorting_1">#{{ pharmacy.id }}</td>
-                                            <td>{{ pharmacy.registered_name }}</td>
-                                            <td>{{ pharmacy.license_num }}</td>
-                                            <td>{{ pharmacy.phone }}</td>
-                                            <td>{{ pharmacy.area_covered }}</td>
+                                            <td class="sorting_1">#{{ pharmacie.id }}</td>
+                                            <td>{{ pharmacie.registered_name }}</td>
+                                            <td>{{ pharmacie.license_num }}</td>
+                                            <td>{{ pharmacie.phone }}</td>
+                                            <td>{{ pharmacie.area_covered }}</td>
                                             <td>
                                                 <router-link :to="{
                                                     name: 'PharmaciesEdit',
-                                                    params: { id: pharmacy.id }
+                                                    params: { id: pharmacie.id }
                                                 }" class="btn btn-success">Edit</router-link>
-                                                <button class="btn btn-danger" @click="deletePharmacy(pharmacy.id)">Delete</button>
+                                                <button class="btn btn-danger" @click="deletePharmacie(pharmacie.id)">Delete</button>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -161,7 +161,7 @@ export default {
                     console.log(console.error);
                 });
         },
-        deletePharmacies(id) {
+        deletePharmacie(id) {
             axios.delete("api/pharmacies/" + id).then(res => {
                 this.showMessage = true;
                 this.message = res.data;

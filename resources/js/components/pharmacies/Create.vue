@@ -7,14 +7,14 @@
             <div class="card-header">
               Create Pharmacy Record
               <router-link
-                :to="{ name: 'PharmarciesIndex' }"
+                :to="{ name: 'PharmaciesIndex' }"
                 class="float-right"
                 >Back</router-link
               >
             </div>
 
             <div class="card-body">
-              <form @submit.prevent="storePharmarcy">
+              <form @submit.prevent="storePharmacy">
                 <div class="form-group row">
                   <label
                     for="company_name"
@@ -233,7 +233,7 @@
                   >
                   <div class="col-md-6">
                     <select
-                      v-model="form.pharmacy_id"
+                      v-model="form.pharmacist_id"
                       name="contact_person"
                       class="form-control"
                       aria-label="Select Pharmacists"
@@ -382,6 +382,7 @@ export default {
           license_num: this.form.license_num,
           paypal_email: this.form.paypal_email,
           blockchain_ver: this.form.blockchain_ver,
+          contact_person: this.form.contact_person
         //   birthdate: this.format_date(this.form.birthdate),
         //   date_hired: this.format_date(this.form.date_hired),
         })
