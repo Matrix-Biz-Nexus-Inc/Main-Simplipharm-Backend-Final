@@ -1,6 +1,7 @@
 import EmployeesIndex from "./components/employees/Index";
 import EmployeesCreate from "./components/employees/Create";
 import EmployeesEdit from "./components/employees/Edit";
+import EmployeesView from './components/employees/View';
 //pharmacist routes
 import PharmacistsIndex from "./components/pharmacists/Index";
 import PharmacistsCreate from "./components/pharmacists/Create";
@@ -24,15 +25,20 @@ export const routes = [
         component: EmployeesCreate
     },
     {
+        path: "/employees/view/:id",
+        name: "EmployeesView",
+        component: EmployeesView
+    },
+    {
         path: "/employees/:id",
         name: "EmployeesEdit",
         component: EmployeesEdit
     },
-        { //pharmacists routes start
-            path: "/pharmacists",
-            name: "PharmacistsIndex",
-            component: PharmacistsIndex
-        },
+    { //pharmacists routes start
+        path: "/pharmacists",
+        name: "PharmacistsIndex",
+        component: PharmacistsIndex
+    },
     {
         path: "/pharmacists/create",
         name: "PharmacistsCreate",

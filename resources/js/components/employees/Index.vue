@@ -84,6 +84,13 @@
                                             <td>{{ employee.zip_code }}</td>
                                             <td>{{ employee.department.name }}</td>
                                             <td>
+                                                <!-- Button trigger modal start-->
+                                                <router-link :to="{
+                                                    name: 'EmployeesView',
+                                                    params: { id: employee.id }
+                                                }" class="btn btn-primary" data-toggle="modal" data-target="EmployeesView">Quick View</router-link>
+
+                                                <!-- Button trigger modal end-->
                                                 <router-link :to="{
                                                     name: 'EmployeesEdit',
                                                     params: { id: employee.id }
@@ -118,7 +125,8 @@
                 </div>
             </div>
         </div>
-    
+    <!-- Modal -->
+
     </div>
 </template>
 

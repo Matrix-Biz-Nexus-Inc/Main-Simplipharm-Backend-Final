@@ -21,6 +21,8 @@ class Employee extends Model
             'birthdate',
             'date_hired',
             'zip_code',
+            'approved',
+            'approved_by'
     ];
 
     protected $casts = [

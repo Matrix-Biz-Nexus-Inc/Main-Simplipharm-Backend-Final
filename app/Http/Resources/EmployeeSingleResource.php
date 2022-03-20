@@ -26,7 +26,9 @@ class EmployeeSingleResource extends JsonResource
             'department_id' => $this->department_id,
             'zip_code'   => $this->zip_code,
             'birthdate'  => $this->birthdate,
-            'date_hired' => $this->date_hired
+            'date_hired' => $this->date_hired,
+            'approved' => $this->approved,
+            'approved_by' => $this->approved_by
         ];
     }
 }
