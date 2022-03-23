@@ -221,7 +221,7 @@
                                                 >Upload Prescription</label
                                             >
                                             <div class="col-md-6">
-                                                 <input type="file" class="form-control" id="customFile" />
+                                                 <input type="file" @change="onChange" class="form-control" id="presc_upload" />
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -280,7 +280,8 @@ export default {
                 city_id: "",
                 zip_code: "",
                 birthdate: null,
-                date_hired: null
+                date_hired: null,
+                presc_upload: null,
             }
         };
     },
@@ -352,6 +353,9 @@ export default {
             if (value) {
                 return moment(String(value)).format("YYYYMMDD");
             }
+        },
+        onChange(e){
+            console.log("selected file is", e.target.files[0])
         }
     }
 };

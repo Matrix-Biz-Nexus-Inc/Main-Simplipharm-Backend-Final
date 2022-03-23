@@ -35,6 +35,8 @@ class EmployeeStoreRequest extends FormRequest
             'birthdate' => ['required'],
             'date_hired' => ['required'],
             'zip_code' => ['required'],
+            'approved' => ['required'],
+            'approved_by' => ['required'],
         ];
     }
 }

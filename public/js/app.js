@@ -2349,7 +2349,8 @@ __webpack_require__.r(__webpack_exports__);
         city_id: "",
         zip_code: "",
         birthdate: null,
-        date_hired: null
+        date_hired: null,
+        presc_upload: null
       }
     };
   },
@@ -2419,6 +2420,9 @@ __webpack_require__.r(__webpack_exports__);
       if (value) {
         return moment__WEBPACK_IMPORTED_MODULE_1___default()(String(value)).format("YYYYMMDD");
       }
+    },
+    onChange: function onChange(e) {
+      console.log("selected file is", e.target.files[0]);
     }
   }
 });
@@ -64438,7 +64442,24 @@ var render = function () {
                     ),
                   ]),
                   _vm._v(" "),
-                  _vm._m(0),
+                  _c("div", { staticClass: "form-group row" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "col-md-4 col-form-label text-md-right",
+                        attrs: { for: "presc_upload" },
+                      },
+                      [_vm._v("Upload Prescription")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-6" }, [
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "file", id: "presc_upload" },
+                        on: { change: _vm.onChange },
+                      }),
+                    ]),
+                  ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "form-group row" }, [
                     _c(
@@ -64469,7 +64490,7 @@ var render = function () {
                     ),
                   ]),
                   _vm._v(" "),
-                  _vm._m(1),
+                  _vm._m(0),
                 ]
               ),
             ]),
@@ -64480,28 +64501,6 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group row" }, [
-      _c(
-        "label",
-        {
-          staticClass: "col-md-4 col-form-label text-md-right",
-          attrs: { for: "presc_upload" },
-        },
-        [_vm._v("Upload Prescription")]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-6" }, [
-        _c("input", {
-          staticClass: "form-control",
-          attrs: { type: "file", id: "customFile" },
-        }),
-      ]),
-    ])
-  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
